@@ -21,6 +21,9 @@ import { FormsModule } from'@angular/forms';
 import { MatFormFieldModule } from'@angular/material/form-field';
 import { MatInputModule } from'@angular/material/input';
 import { ReadComponent } from './components/usuario/read/read.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
@@ -32,7 +35,8 @@ import { ReadComponent } from './components/usuario/read/read.component';
     HomeComponent,
     UsuarioCrudComponent,
     CreateComponent,
-    ReadComponent
+    ReadComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,10 @@ import { ReadComponent } from './components/usuario/read/read.component';
     HttpClientModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
