@@ -1,3 +1,4 @@
+import { CPFPipe } from './../../../cpf.pipe';
 import { Usuario } from './../usuario.model';
 import { UsuarioService } from './../usuario.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadComponent implements OnInit {
   usuarios: Usuario[] =[];
-  displayedColumns = ['id', 'email','nome', 'perfil']
+  displayedColumns = ['id', 'email','nome', 'perfil','cpf']
   constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {

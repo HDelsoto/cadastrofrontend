@@ -24,6 +24,7 @@ import { ReadComponent } from './components/usuario/read/read.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { CPFPipe } from './cpf.pipe';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { MatSortModule } from '@angular/material/sort';
     UsuarioCrudComponent,
     CreateComponent,
     ReadComponent,
+    CPFPipe,
     
   ],
   imports: [
