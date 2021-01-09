@@ -27,4 +27,19 @@ export class UsuarioService {
     return this.http.get<Usuario[]>(this.baseUrl)  
   }
 
+  readById(id:string): Observable<Usuario>{
+    const url=`${this.baseUrl}/${id}`
+    return  this.http.get<Usuario>(url)
+  }
+
+  update(usuario: Usuario): Observable<Usuario>{
+    const url=`${this.baseUrl}/${usuario.id}`
+    return this.http.put<Usuario>(url,usuario)
+  }
+
+  delete(id:string): Observable<Usuario>{
+    const url=`${this.baseUrl}/${id}`;
+    return this.http.delete<Usuario>(url);
+  }
+
 }

@@ -25,6 +25,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { CPFPipe } from './cpf.pipe';
+import { UpdateComponent } from './components/usuario/update/update.component';
+import { DeleteComponent } from './components/usuario/delete/delete.component';
 
 
 @NgModule({
@@ -38,6 +40,8 @@ import { CPFPipe } from './cpf.pipe';
     CreateComponent,
     ReadComponent,
     CPFPipe,
+    UpdateComponent,
+    DeleteComponent,
     
   ],
   imports: [

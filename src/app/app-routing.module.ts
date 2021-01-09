@@ -1,3 +1,4 @@
+import { UpdateComponent } from './components/usuario/update/update.component';
 import { CreateComponent } from './components/usuario/create/create.component';
 import { UsuarioCrudComponent } from './views/usuario-crud/usuario-crud.component';
 import { HomeComponent } from './views/home/home.component';
@@ -15,7 +16,11 @@ const routes: Routes = [
   {
    path:"usuarios/create",
    component: CreateComponent
-  }
+  },
+  {
+    path:"usuarios/update/:id",
+    component: UpdateComponent
+   }
 ];
 
 @NgModule({

@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadComponent implements OnInit {
   usuarios: Usuario[] =[];
-  displayedColumns = ['id', 'email','nome', 'perfil','cpf']
+  displayedColumns = ['id', 'email','nome', 'perfil','cpf', 'action']
   constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
