@@ -10,13 +10,13 @@ import { Router } from '@angular/router';
 })
 export class CreateComponent implements OnInit {
   usuario:Usuario={
-        nome:'Joao',
-        cpf:'15345678910',
-        email:'joao@gmail.com',
-        telefone:'999887755',
-        funcao:'Desenvolvedor',
-        perfil:'Gestor Municipal',
-        situacao:'Ativo'
+        nome:'',
+        cpf:'',
+        email:'',
+        telefone:'',
+        funcao:'',
+        perfil:'',
+        situacao:''
   }
   constructor(private usuarioService: UsuarioService, private router: Router ) { }
 
