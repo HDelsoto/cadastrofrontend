@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,7 +26,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { CPFPipe } from './cpf.pipe';
 import { UpdateComponent } from './components/usuario/update/update.component';
 import { DeleteComponent } from './components/usuario/delete/delete.component';
-
+import {MatSliderModule} from '@angular/material/slider';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -60,7 +60,9 @@ import { DeleteComponent } from './components/usuario/delete/delete.component';
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatSliderModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
