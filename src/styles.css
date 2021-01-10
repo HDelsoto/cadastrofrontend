@@ -10,3 +10,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .blue-snackbar {
     background: #2196F3;
   }
+
+  .msg-success{
+      background-color:#28a745;
+      color : #FFF;
+  }
+
+  .msg-error{
+    background-color:#e35e6b;
+    color : #FFF;
+}
+
