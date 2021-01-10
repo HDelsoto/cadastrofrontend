@@ -29,6 +29,7 @@ import { DeleteComponent } from './components/usuario/delete/delete.component';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,6 +64,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatSortModule,
     MatSliderModule,
     MatSlideToggleModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

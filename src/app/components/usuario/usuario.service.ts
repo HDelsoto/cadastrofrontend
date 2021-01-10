@@ -38,8 +38,15 @@ export class UsuarioService {
   }
 
   readById(id:string): Observable<Usuario>{
-    const url=`${this.baseUrl}/${id}`
+    const url=`${this.baseUrl}/${id}`    
     return  this.http.get<Usuario>(url).pipe(
+      map((obj) => obj), catchError((e) => this.errorHandler(e))
+    )
+  }
+
+  readByFilter(nome:string, perfil:string, situacao:string): Observable<Usuario[]>{
+    const url=`${this.baseUrl}?nome_like=${nome}&perfil_like=${perfil}&situacao_like=${situacao}`
+    return  this.http.get<Usuario[]>(url).pipe(
       map((obj) => obj), catchError((e) => this.errorHandler(e))
     )
   }

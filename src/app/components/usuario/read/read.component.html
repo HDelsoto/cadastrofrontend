@@ -1,5 +1,37 @@
+<mat-card>
+  <mat-card-title> </mat-card-title>
+  <form>
+      <mat-form-field>
+          <input matInput placeholder="Nome" [(ngModel)]="usuario.nome" name="nome">            
+      </mat-form-field>
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Situação</mat-label>
+        <select matNativeControl required placeholder="Situação" [(ngModel)]="usuario.situacao" name="situacao">
+          <option value="">Todos</option>
+          <option value="true">Ativo</option>
+          <option value="false">Inativo</option>                       
+        </select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+          <mat-label>Perfil</mat-label>
+          <select matNativeControl required placeholder="Perfil" [(ngModel)]="usuario.perfil" name="perfil">
+            <option value="">Todos</option>
+            <option value="Gestor Municipal">Gestor Municipal</option>
+            <option value="Gestor Estadual">Gestor Estadual</option>
+            <option value="Gestor Nacional">Gestor Nacional</option>              
+          </select>
+      </mat-form-field>
+     
+  </form>
+  <button mat-raised-button (click)="pesquisar()" name="bnome">
+      Pesquisar
+  </button>  
+</mat-card>
+
 <div class="mat-elevation-z3">
-    <table mat-table [dataSource]="usuarios">
+    <table mat-table [dataSource]="usuarios" *ngIf="show">
       <!-- Id Column -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef >Id</th>
@@ -61,7 +93,7 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-  
+    
     
   </div>
   

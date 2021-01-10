@@ -12,7 +12,9 @@ import { Router,  ActivatedRoute } from '@angular/router';
   styleUrls: ['./read.component.css']
 })
 export class ReadComponent implements OnInit {
+  show:any="true"
   usuarios: Usuario[] =[];
+  usuarios2: Usuario[] =[];
   usuario:Usuario={
     nome:'',
     cpf:'',
@@ -22,10 +24,11 @@ export class ReadComponent implements OnInit {
     perfil:'',
     situacao:''
 }
-  displayedColumns = ['id', 'email','nome', 'perfil','cpf', 'toggle', 'action']
+  displayedColumns = ['email','nome', 'perfil','toggle', 'action']
   constructor(private usuarioService: UsuarioService,private router: Router ) { }
 
   ngOnInit(): void {
+    this.show=true
     this.usuarioService.read().subscribe(usuarios => {
       this.usuarios=usuarios
       console.log(usuarios)
@@ -44,6 +47,24 @@ export class ReadComponent implements OnInit {
 
   cancel(): void{
     this.router.navigate(['/usuarios'])
+  }
+
+  /*showTable(): void{
+    this.show=false
+    this.usuarios=this.usuarios2
+    setTimeout(() => {
+      this.show = true // retorna com tabela para o DOM e os dados atualizados do 
+                          
+    }, 5000);
+  }*/
+
+  pesquisar(): void{
+    this.usuarioService.readByFilter(this.usuario.nome, this.usuario.perfil, this.usuario.situacao).subscribe(usuarios => {
+      this.usuarios=usuarios
+      console.log(usuarios)
+    })
+    console.log("nome", this.usuarios)
+    console.log("nomeEnd")
   }
   
 }
