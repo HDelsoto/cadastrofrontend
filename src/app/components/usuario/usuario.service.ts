@@ -8,7 +8,7 @@ import { map, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UsuarioService {
-  baseUrl= "http://localhost:3001/usuarios"
+  baseUrl= "http://apirestjsonserver.herokuapp.com/usuarios"
   constructor(private snackBar: MatSnackBar, private http:HttpClient) { }
 
   showMessage(msg: string, isError: boolean=false): void{
