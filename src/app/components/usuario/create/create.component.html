@@ -1,3 +1,4 @@
+
 <mat-card>
     <mat-card-title> Cadastro Usuário</mat-card-title>
     <form>
@@ -11,7 +12,7 @@
             <input matInput placeholder="CPF" [(ngModel)]="usuario.cpf" name="cpf" mask="CPF_CNPJ">
         </mat-form-field>        
         <mat-form-field>
-            <input matInput placeholder="Telefone" [(ngModel)]="usuario.telefone" name="telefone">
+            <input matInput placeholder="Telefone" [(ngModel)]="usuario.telefone" name="telefone" data-mask="(00) 00000-0000">
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Função</mat-label>
@@ -39,7 +40,8 @@
               <option value="false">Inativo</option>                       
             </select>
           </mat-form-field>
-       
+          <label>Telefone</label>
+        
     </form>
     <button mat-raised-button (click)="createUsuario()" color="primary" name="bnome">
         Salvar
@@ -49,5 +51,4 @@
         Cancelar
     </button>
 </mat-card>
-
 

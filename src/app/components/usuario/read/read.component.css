@@ -18,11 +18,14 @@ table{
 
 form{
     display:flex;
-    flex-direction: column;
-
+    flex-direction:column;
+    width: 100%;    
 }
 
 button{
     margin-top: 10px;
     margin-right: 15px;
 }
+
+
+

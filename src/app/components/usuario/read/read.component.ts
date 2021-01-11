@@ -38,9 +38,12 @@ export class ReadComponent implements OnInit {
   updateStatus(element: any): void {
       element.situacao=!element.situacao
       if (element.id != null) {
-        this.usuarioService.update(element).subscribe(() =>{
-          this.usuarioService.showMessage('Usuário alterado com sucesso!')  
-        })      
+        if(element.situacao)this.usuarioService.update(element).subscribe(() =>{
+          this.usuarioService.showMessage('Usuário habilitado com sucesso!')  
+        })  
+        else this.usuarioService.update(element).subscribe(() =>{
+          this.usuarioService.showMessage('Usuário desabilitado com sucesso!')  
+        })     
         this.cancel()
       }
     }
@@ -66,5 +69,7 @@ export class ReadComponent implements OnInit {
     console.log("nome", this.usuarios)
     console.log("nomeEnd")
   }
+
+  
   
 }

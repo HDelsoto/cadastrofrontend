@@ -44,6 +44,13 @@ export class UsuarioService {
     )
   }
 
+  readByCpf(cpf:string): Observable<Usuario>{
+    const url=`${this.baseUrl}?cpf=${cpf}`    
+    console.log ("url = ", url)
+    return  this.http.get<Usuario>(url)
+    
+  }
+
   readByFilter(nome:string, perfil:string, situacao:string): Observable<Usuario[]>{
     const url=`${this.baseUrl}?nome_like=${nome}&perfil_like=${perfil}&situacao_like=${situacao}`
     return  this.http.get<Usuario[]>(url).pipe(

@@ -29,7 +29,7 @@ export class DeleteComponent implements OnInit {
   }
   deleteUsuario() :void{
     if(this.usuario.id!=null)this.usuarioService.delete(this.usuario.id).subscribe(()=>{
-      this.usuarioService.showMessage('Usuário excluido.')
+      this.usuarioService.showMessage('Exclusão efetuada com sucesso.')
       this.router.navigate(['/usuarios'])
     })
   }
