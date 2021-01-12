@@ -29,21 +29,26 @@ export class CreateComponent implements OnInit {
   createUsuario(): void{
     var scpf =new String();
     scpf= this.splitCpf(this.usuario.cpf);
-    console.log(this.validaCpf(scpf));
-    this.usuario.cpf = scpf.toString();
-    this.usuarioService.readByCpf(this.usuario.cpf).subscribe(usuario => {
-      console.log("retorno unique", Object.keys(usuario).length) 
-      if(Object.keys(usuario).length===0) {
-        this.usuarioService.create(this.usuario).subscribe(()=>{
-        this.usuarioService.showMessage('Cadastro efetuado com sucesso!')
-        this.router.navigate(['/usuarios'])})      
-        }  
-      else {
-        this.usuarioService.showMessage('Operação não realizada. Usuário já Incluido´.')
-        this.router.navigate(['/usuarios'])
-      }  
-   }
-    )
+    if(this.validaCpf(scpf)){
+      this.usuario.cpf = scpf.toString();
+      this.usuarioService.readByCpf(this.usuario.cpf).subscribe(usuario => {
+         console.log("retorno unique", Object.keys(usuario).length) 
+         if(Object.keys(usuario).length===0) {
+           this.usuarioService.create(this.usuario).subscribe(()=>{
+           this.usuarioService.showMessage('Cadastro efetuado com sucesso!')
+           this.router.navigate(['/usuarios'])})      
+          }  
+         else {
+          this.usuarioService.showMessage('Operação não realizada. Usuário já Incluido.', true)
+          this.router.navigate(['/usuarios'])
+         }  
+      })
+    }
+    else
+    {
+      this.usuarioService.showMessage('Operação não realizada. CPF digitado inválido.', true)
+          this.router.navigate(['/usuarios'])
+    }
  }
 
   uniqueCpf(): void{
